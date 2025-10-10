@@ -59,7 +59,8 @@
         android:id="@+id/show_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        app:layout_constraintStart_toEndOf="@id/size_spin"
+        app:layout_constraintTop_toBottomOf="@id/drink_spin"
         tools:layout_editor_absoluteX="200dp"
         tools:layout_editor_absoluteY="285dp"
         android:textSize="35sp"/>
@@ -67,8 +68,8 @@
     <Button android:id="@+id/btn_compute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
+        app:layout_constraintStart_toEndOf="@id/size_title"
+        app:layout_constraintTop_toBottomOf="@id/drink_spin"
         tools:layout_editor_absoluteX="230dp"
         tools:layout_editor_absoluteY="320dp"
         android:text="Compute"/>

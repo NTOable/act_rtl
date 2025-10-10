@@ -33,8 +33,8 @@ class sample_retail : AppCompatActivity() {
         Final total/change*/
 
         // For Display
-        val display_drink = arrayOf("Mango", "Milk Tea", "Milkshake")
-        val display_size = arrayOf("Small","Medium","Large")
+        val display_drink = arrayOf("Mango Juice", "Milk Tea", "Milkshake")
+        val display_size = arrayOf("Small", "Medium", "Large")
             // ArrayAdapter code to display arrays as options
                 // for drinks
         val drink_adapter = ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, display_drink)
@@ -63,24 +63,29 @@ class sample_retail : AppCompatActivity() {
                     val choice_size = size_spinner.getSelectedItem()
 
                     when (choice_size) {
-                        "Small" -> when (choice_drink) {
-                            "Mango Juice" -> drink_price = Fruit1.price * 1
-                            "Milk Tea" -> drink_price = Tea1.price * 1
-                            "Milkshake" -> drink_price = Milk1.price * 1
+                        "Small" -> drink_price = when (choice_drink) {
+                            "Mango Juice" -> Fruit1.price * 1
+                            "Milk Tea" -> Tea1.price * 1
+                            "Milkshake" -> Milk1.price * 1
+                            else -> 0.0
                         }
-                        "Medium" -> when (choice_drink) {
-                            "Mango Juice" -> drink_price = Fruit1.price * .25
-                            "Milk Tea" -> drink_price = Tea1.price * .25
-                            "Milkshake" -> drink_price = Milk1.price * .25
+                        "Medium" -> drink_price = when (choice_drink) {
+                            "Mango Juice" -> Fruit1.price * 1.25
+                            "Milk Tea" -> Tea1.price * 1.25
+                            "Milkshake" -> Milk1.price * 1.25
+                            else -> 0.0
                         }
-                        "Large" -> when (choice_drink) {
-                            "Mango Juice" -> drink_price = Fruit1.price * .5
-                            "Milk Tea" -> drink_price = Tea1.price * .5
-                            "Milkshake" -> drink_price = Milk1.price * .5
+                        "Large" -> drink_price = when (choice_drink) {
+                            "Mango Juice" -> Fruit1.price * 1.5
+                            "Milk Tea" -> Tea1.price * 1.5
+                            "Milkshake" -> Milk1.price * 1.5
+                            else -> 0.0
                         }
+                        else -> drink_price = 0.0
                 }
                     // Display price
-                    show_total.text = drink_price
+                    show_total.text = "$drink_price"
+
              }
         }
     }
