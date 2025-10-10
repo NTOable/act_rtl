@@ -79,6 +79,7 @@ class sample_retail : AppCompatActivity() {
                             "Milkshake" -> drink_price = Milk1.price * .5
                         }
                 }
+                    // Display price
                     show_total.text = drink_price
              }
         }
