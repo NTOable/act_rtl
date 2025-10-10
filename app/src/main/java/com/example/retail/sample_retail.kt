@@ -82,10 +82,37 @@ class sample_retail : AppCompatActivity() {
                             else -> 0.0
                         }
                         else -> drink_price = 0.0
-                }
+                    }
                     // Display price
                     show_total.text = "$drink_price"
 
-             }
-        }
+                val etPayment= findViewById<EditText>(R.id.etPayment)
+                val tvSummary= findViewById<TextView>(R.id.tvSummary)
+
+                val paymentText= etPayment.text.toString()
+
+                if(paymentText.isEmpty()) {
+                    Toast.makeText(this, "Please Enter Payment", Toast.LENGTH_SHORT).show()
+                } else{
+                    val payment= paymentText.toDouble()
+                    val change= payment- drink_price
+
+                    if(change< 0){
+                        Toast.makeText(this, "Insufficient Payment!", Toast.LENGTH_SHORT).show()
+                    } else{
+                        val summary= """
+                            Order Summary:
+                            Drink: $choice_drink
+                            Size: $choice_size
+                            Total: ${String.format("%.2f", drink_price)}
+                            Payment: ${String.format("%.2f", payment)}
+                            Change: ${String.format("%.2f", change)}""".trimIndent()
+
+                        tvSummary.text= summary
+                        Toast.makeText(this, "Change: ${String.format("%.2f", change)}", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+
     }
+}
