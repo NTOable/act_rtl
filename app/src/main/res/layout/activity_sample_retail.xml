@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Sample Retail App "
+        android:text="Sample Retail App"
         android:gravity="center"
-        android:textSize="45dp"/>
+        android:textSize="45sp"/>
 
     <TextView
         android:id="@+id/drink_title"
@@ -22,19 +22,22 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/rtl_title"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
         android:text="Drinks"
-        android:textSize="35dp"/>
+        android:textSize="35sp"/>
 
-    <Spinner android:id="@+id/drink_spin"
+    <Spinner
+        android:id="@+id/drink_spin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/drink_title"
-        app:layout_constraintTop_toBottomOf="@id/rtl_title"
+        android:layout_marginTop="60dp"
+        android:textSize="35sp"
         app:layout_constraintBaseline_toBaselineOf="@id/drink_title"
-        android:textSize="35sp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@id/drink_title"
+        app:layout_constraintTop_toBottomOf="@id/rtl_title" />
 
     <TextView
         android:id="@+id/size_title"
@@ -44,7 +47,7 @@
         app:layout_constraintStart_toStartOf="@id/drink_title"
         android:layout_marginTop="40dp"
         android:text="Sizes"
-        android:textSize="35dp"/>
+        android:textSize="35sp"/>
 
     <Spinner android:id="@+id/size_spin"
         android:layout_width="wrap_content"
@@ -54,36 +57,40 @@
         app:layout_constraintTop_toBottomOf="@id/drink_spin"
         app:layout_constraintBaseline_toBaselineOf="@id/size_title"
         android:textSize="35sp"/>
-<!--Temp no Constraint-->
+
     <TextView
         android:id="@+id/show_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="100dp"
         app:layout_constraintStart_toEndOf="@id/size_spin"
         app:layout_constraintTop_toBottomOf="@id/drink_spin"
         tools:layout_editor_absoluteX="200dp"
         tools:layout_editor_absoluteY="285dp"
         android:textSize="35sp"/>
 
-    <Button android:id="@+id/btn_compute"
+    <Button
+        android:id="@+id/btn_compute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="144dp"
+        android:text="Compute"
         app:layout_constraintStart_toEndOf="@id/size_title"
-        app:layout_constraintTop_toBottomOf="@id/drink_spin"
-        tools:layout_editor_absoluteX="230dp"
-        tools:layout_editor_absoluteY="320dp"
-        android:text="Compute"/>
+        app:layout_constraintTop_toBottomOf="@id/drink_spin" />
 
     <EditText
         android:id="@+id/etPayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:hint="Enter Payment"
         android:inputType="numberDecimal"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/btn_compute"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btn_compute" />
 
     <TextView
         android:id="@+id/tvSummary"
